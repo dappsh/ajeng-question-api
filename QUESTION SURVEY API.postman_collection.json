@@ -1,0 +1,290 @@
+{
+	"info": {
+		"_postman_id": "61dcded4-bec0-4037-81f3-7e54abc390fd",
+		"name": "QUESTION SURVEY API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET QUESTIONS LIST",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "question",
+							"value": "Mas rio ?",
+							"type": "text"
+						},
+						{
+							"key": "allowNone",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "shuffleOrder",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "respondent[0][id]",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "respondent[0][optionId]",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "respondent[0][answer]",
+							"value": "AJENG3",
+							"type": "text"
+						},
+						{
+							"key": "respondent[1][id]",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "respondent[1][optionId]",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "respondent[1][answer]",
+							"value": "YAUDAH3",
+							"type": "text"
+						},
+						{
+							"key": "respondent[2][optionId]",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "respondent[2][answer]",
+							"value": "JUJUJU2222",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/questions",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE QUESTIONS",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "question",
+							"value": "Create question 1 ?",
+							"type": "text"
+						},
+						{
+							"key": "allowNone",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "shuffleOrder",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "respondent[0][optionId]",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "respondent[0][answer]",
+							"value": "Answer the first option",
+							"type": "text"
+						},
+						{
+							"key": "respondent[1][optionId]",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "respondent[1][answer]",
+							"value": "Answer the second option",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/questions",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE QUESTION",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "question",
+							"value": "Update question 1 ?",
+							"type": "text"
+						},
+						{
+							"key": "allowNone",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "shuffleOrder",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "respondent[0][id]",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "respondent[0][optionId]",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "respondent[0][answer]",
+							"value": "Update answer the first option",
+							"type": "text"
+						},
+						{
+							"key": "respondent[1][optionId]",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "respondent[1][answer]",
+							"value": "add new answer the second option",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/questions/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questions",
+						"2"
+					]
+				},
+				"description": "- respondet data has id respondent[0][id] => updated respondent\n- respondent data without id respondent[1] => create new respondent"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE QUESTION",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/questions/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questions",
+						"1"
+					]
+				},
+				"description": "will delete question & it's respondent data\n\nlocalhost:3000/questions/:idquestion"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE RESPONDENT ROW in QUESTION",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/questions/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questions",
+						"1"
+					]
+				},
+				"description": "will delete one of respondent row in question form\n\nlocalhost:3000/questions/:idrespondent"
+			},
+			"response": []
+		}
+	]
+}
