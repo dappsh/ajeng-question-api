@@ -1,20 +1,9 @@
-const express = require('express');
-const bodyParser = require('body-parser')
-const mysql = require('mysql');
 const conn = require('./config')
-
-
-const app = express();
-
-app.use(bodyParser.urlencoded({extended: true}));
-
-app.use(bodyParser.json());
+const app = require('./app.js')
 
 
 const port = 3000;
 const baseUrl = 'http://localhost:'+port;
-
-
 
 // === GET ALL "QUESTION" ===
 app.get('/questions',  (req, res) => {
